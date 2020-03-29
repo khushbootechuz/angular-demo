@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/product/create']">{{'Create' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/product/list']" translate>List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cart']" translate>Cart</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" (click)="logout()" href="javascript:void(0)" translate>LogOut</a>
+        </li>
+    </ul>
+  </nav>
+  

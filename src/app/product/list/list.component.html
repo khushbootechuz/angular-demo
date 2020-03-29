@@ -1,0 +1,10 @@
+
+<form>
+  <input type="text" class="form-control" placeholder="Search.." name="search" [(ngModel)]="searchKey" (ngModelChange)="getProductList()">
+</form>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between" *ngFor="let item of productList">{{item.productName}}
+    <button class="btn btn-info" (click)="addToCart(item)">Add To Cart</button>
+  </li>
+</ul>
+
