@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from './../models/user';
+import { User, Login } from './../models/user';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -22,8 +22,8 @@ export class UserService {
     return this.currentUserSubject.value;
   }
 
-  public userLogin(username, password) {
-    return this.http.post<any>(`/users/authenticate`, { username, password })
+  public userLogin(data: Login) {
+    return this.http.post<any>(`/users/authenticate`, data)
     .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {

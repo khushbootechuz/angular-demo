@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from './../models/user';
 import { map } from 'rxjs/operators';
+import { addProduct } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class ProductService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public addProduct(name, price) {
-    return this.http.post<any>(`/product`, {"productName": name,"productPrice":price})
+  public addProduct(data: addProduct) {
+    return this.http.post<any>(`/product`, data)
     .pipe(map(user => {
         return user;
     }));

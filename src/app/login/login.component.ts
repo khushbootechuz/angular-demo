@@ -32,7 +32,11 @@ export class LoginComponent implements OnInit {
     if (this.LoginForm.invalid) {
       return;
     }
-    this.userService.userLogin(this.f.email.value, this.f.password.value)
+    this.userService.userLogin(
+      {
+        "username": this.f.email.value, 
+      "password": this.f.password.value
+     })
     .pipe(first())
     .subscribe(
         data => {

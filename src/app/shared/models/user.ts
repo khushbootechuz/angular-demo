@@ -6,3 +6,8 @@ export class User {
     lastName: string;
     token: string;
 }
+
+export class Login {
+    username: string;
+    password: string;
+}

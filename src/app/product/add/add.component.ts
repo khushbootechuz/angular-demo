@@ -25,7 +25,7 @@ export class AddComponent implements OnInit {
 
   addProduct(name, price) {
     this.loaderService.startLoading();
-    this.service.addProduct(name, price)
+    this.service.addProduct({"productName": name,"productPrice":price})
     .pipe(first())
     .subscribe(
       res => {
